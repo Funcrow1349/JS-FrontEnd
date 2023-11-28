@@ -78,8 +78,6 @@ function solve() {
 
       const allRestaurants = new AllRestaurants();
 
-      
-
       allRestaurants.addRestaurants(inputValue);
 
       const bestRestaurant = allRestaurants.getBestRestaurant();
