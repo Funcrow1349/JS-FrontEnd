@@ -41,7 +41,6 @@ function solve() {
                let [name, workers] = restaurant.split(' - ');
                workers = workers.split(', ');
                let restaurantExists = false;
-
                let currentRestaurant = undefined
 
                if (this.allRestaurants.has(name)) {
@@ -73,24 +72,31 @@ function solve() {
 
       const input = document.querySelector('#inputs textarea');
       const inputValue = JSON.parse(input.value);
-      const bestRestaurantOutput = document.querySelector('#bestRestaurant p');
-      const bestRestaurantWorkersOutput = document.querySelector('#workers p');
 
       const allRestaurants = new AllRestaurants();
-
       allRestaurants.addRestaurants(inputValue);
-
+      
       const bestRestaurant = allRestaurants.getBestRestaurant();
-
+      const bestRestaurantOutput = document.querySelector('#bestRestaurant p');
       bestRestaurantOutput.textContent = `Name: ${bestRestaurant.name} Average Salary: ${bestRestaurant.averageSalary.toFixed(2)} Best Salary: ${bestRestaurant.bestSalary.toFixed(2)}`;
 
-      const workers = Object.values(bestRestaurant.workers).sort((a, b) => b.salary - a.salary);
-
+      const bestRestaurantWorkersOutput = document.querySelector('#workers p');
       let workersOutput = [];
+      const workers = Object.values(bestRestaurant.workers).sort((a, b) => b.salary - a.salary);
       for (const worker of workers) {
          workersOutput.push(`Name: ${worker.name} With Salary: ${worker.salary}`);
       }
-
       bestRestaurantWorkersOutput.textContent = workersOutput.join(' ');
+
+      
+
+      
+
+
+      
+
+      
+
+      
    }
 }
