@@ -29,10 +29,10 @@ function motoGpRace(input) {
             
             
             if (action === "StopForFuel") {
-                let refuelAmount = Number(command[2])
+                let minimumFuel = Number(command[2])
                 let changedPosition = Number(command[3])
                 let riderObj = riders.find(obj => obj.rider === riderName)
-                if (riderObj.fuelCapacity < 100) {
+                if (riderObj.fuelCapacity < minimumFuel) {
                     riderObj.fuelCapacity = 100
                     riderObj.position = changedPosition
                     console.log(`${riderName} stopped to refuel but lost his position, now he is ${changedPosition}.`)
@@ -55,19 +55,15 @@ function motoGpRace(input) {
                 let overtakingRider = riders.find(obj => obj.rider === riderName)
                 let overtakenRider = riders.find(obj => obj.rider === secondRiderName)
 
-                let overtakingRiderInitialIndex = riders.indexOf(overtakingRider)
-                let overtakenRiderInitialIndex = riders.indexOf(overtakenRider)
-
                 let overtakingRiderInitialPosition = overtakingRider.position
                 let overtakenRiderInitialPosition = overtakenRider.position
                 
                 
-                if(overtakingRiderInitialIndex < overtakenRiderInitialIndex) {
+                if(overtakingRiderInitialPosition < overtakenRiderInitialPosition) {
                     overtakingRider.position = overtakenRiderInitialPosition
                     overtakenRider.position = overtakingRiderInitialPosition
                     console.log(`${riderName} overtook ${secondRiderName}!`)
 
-                    riders[overtakingRiderInitialIndex] = riders.splice(overtakenRiderInitialIndex, 1, riders[overtakingRiderInitialIndex])[0];
                 }
             } else if (action === "EngineFail") {
                 const lapsLeft = Number(command[2])
