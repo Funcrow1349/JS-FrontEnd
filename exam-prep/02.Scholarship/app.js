@@ -54,7 +54,7 @@ function solve() {
         applyButtonElement.addEventListener("click", () => {
           candidatesList.innerHTML += previewList.innerHTML
           const buttonsToHide = Array.from(candidatesList.getElementsByTagName("button"))
-          buttonsToHide.forEach((btn) => btn.style.display = "none")
+          buttonsToHide.forEach((btn) => btn.remove())
           
           nextButton.disabled = false
           previewList.innerHTML = ""
