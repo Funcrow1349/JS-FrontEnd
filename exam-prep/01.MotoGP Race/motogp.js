@@ -36,15 +36,7 @@ function motoGpRace(input) {
                     riderObj.fuelCapacity = 100
                     riderObj.position = changedPosition
                     console.log(`${riderName} stopped to refuel but lost his position, now he is ${changedPosition}.`)
-                    // if (riderObj.position != numberOfRiders) {
-                    //     riderObj.position = changedPosition
-                    //     // for (const rider of riders) {
-                    //     //     if (rider.rider !== riderName && rider.position <= riderObj.position && rider.position != 1) {
-                    //     //         rider.position -= 1
-                    //     //     }
-                    //     // }
-                    //     console.log(`${riderName} stopped to refuel but lost his position, now he is ${changedPosition}."`)
-                    // }
+                   
                 } else{
                     console.log(`${riderName} does not need to stop for fuel!`)
                 }
