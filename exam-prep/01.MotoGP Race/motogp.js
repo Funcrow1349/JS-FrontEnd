@@ -75,7 +75,7 @@ function motoGpRace(input) {
         }
     }
 
-    riders.sort((a, b) => a.position - b.position)
+    // riders.sort((a, b) => a.position - b.position)
     riders.forEach((r) => {
         console.log(r.rider)
         console.log(`  Final position: ${r.position}`)
