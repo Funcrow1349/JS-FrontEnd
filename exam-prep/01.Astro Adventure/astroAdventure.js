@@ -31,13 +31,24 @@ function solve(input) {
             const currentFuel = astronauts[name].energyReserves
             const totalFuel = amountToRefuel + currentFuel
             const excessFuel = totalFuel - 200
-            amountToRefuel -= excessFuel
-
+            if (excessFuel > 0) {
+                amountToRefuel -= excessFuel
+            }
+            
             astronauts[name].energyReserves += amountToRefuel
             console.log(`${name} refueled their energy by ${amountToRefuel}!`)
 
         } else if (action === "Breathe") {
-            // TODO...
+            let amountToBreathe = Number(amount)
+            const currentOxygen = astronauts[name].oxygenLevel
+            const totalOxygen = amountToBreathe + currentOxygen
+            const excessOxygen = totalOxygen - 100
+            if (excessOxygen > 0) {
+                amountToBreathe -= excessOxygen
+            }
+
+            astronauts[name].oxygenLevel += amountToBreathe
+            console.log(`${name} took a breath and recovered ${amountToBreathe} oxygen!`)
         }
 
         commandLine = input.shift()
