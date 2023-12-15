@@ -12,7 +12,6 @@ function solve(input) {
     }
 
     let commandLine = input.shift()
-    console.log(commandLine)
 
     while (commandLine !== "End") {
         let [action, name, amount] = commandLine.split(" - ")
@@ -53,6 +52,11 @@ function solve(input) {
 
         commandLine = input.shift()
     }
+
+    for (const astronaut in astronauts) {
+        console.log(`Astronaut: ${astronaut}, Oxygen: ${astronauts[astronaut].oxygenLevel}, Energy: ${astronauts[astronaut].energyReserves}`) 
+        }
+    
 }
 
 solve([  '3',
