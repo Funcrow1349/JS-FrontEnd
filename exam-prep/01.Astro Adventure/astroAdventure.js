@@ -12,19 +12,27 @@ function solve(input) {
     }
 
     let commandLine = input.shift()
+    console.log(commandLine)
 
     while (commandLine !== "End") {
         let [action, name, amount] = commandLine.split(" - ")
 
         if (action === "Explore") {
-            // TODO...
+            const energyNeeded = Number(amount)
+            if (energyNeeded <= astronauts[name].energyReserves) {
+                astronauts[name].energyReserves -= energyNeeded
+                console.log(`${name} has successfully explored a new area and now has ${astronauts[name].energyReserves} energy!`)
+            } else {
+                console.log(`${name} does not have enough energy to explore!`)
+            }
+
         } else if (action === "Refuel") {
             // TODO...
         } else if (action === "Breathe") {
             // TODO...
         }
 
-        let commandLine = input.shift()
+        commandLine = input.shift()
     }
 }
 
