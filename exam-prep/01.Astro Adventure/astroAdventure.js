@@ -27,7 +27,15 @@ function solve(input) {
             }
 
         } else if (action === "Refuel") {
-            // TODO...
+            let amountToRefuel = Number(amount)
+            const currentFuel = astronauts[name].energyReserves
+            const totalFuel = amountToRefuel + currentFuel
+            const excessFuel = totalFuel - 200
+            amountToRefuel -= excessFuel
+
+            astronauts[name].energyReserves += amountToRefuel
+            console.log(`${name} refueled their energy by ${amountToRefuel}!`)
+
         } else if (action === "Breathe") {
             // TODO...
         }
