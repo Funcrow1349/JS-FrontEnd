@@ -2,7 +2,7 @@ function solve(input) {
     const astronautsCount = Number(input.shift())
     const astronauts = {}
 
-    for (let index = 0; index < astronautsCount - 1; index++) {
+    for (let index = 0; index < astronautsCount; index++) {
         const [astronautName, oxygenLevel, energyReserves] = input.shift().split(" ")
         
         astronauts[astronautName] = {
@@ -11,7 +11,21 @@ function solve(input) {
         }  
     }
 
-    
+    let commandLine = input.shift()
+
+    while (commandLine !== "End") {
+        let [action, name, amount] = commandLine.split(" - ")
+
+        if (action === "Explore") {
+            // TODO...
+        } else if (action === "Refuel") {
+            // TODO...
+        } else if (action === "Breathe") {
+            // TODO...
+        }
+
+        let commandLine = input.shift()
+    }
 }
 
 solve([  '3',
