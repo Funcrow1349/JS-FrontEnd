@@ -1,0 +1,3 @@
+function horseRacing(input) {
+    // TODO...
+}
